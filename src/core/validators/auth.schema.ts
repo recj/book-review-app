@@ -1,3 +1,4 @@
+import { LoginCredentials } from "@/lib/types/auth.types";
 import { CreateUserData } from "@/lib/types/user.types";
 import { z } from "zod";
 
@@ -14,6 +15,18 @@ export const signupSchema = z.object({
     .max(100, "Password must be less than 100 characters"),
 });
 
+export const loginSchema = z.object({
+  email: z.email("Invalid email format").toLowerCase().trim(),
+  password: z.string().min(1, "Password is required"),
+});
+
 export const validateSignup = (data: CreateUserData) => {
   return signupSchema.safeParse(data);
 };
+
+export const validateLogin = (data: LoginCredentials) => {
+  return loginSchema.safeParse(data);
+};
+
+export type SignupData = z.infer<typeof signupSchema>;
+export type LoginData = z.infer<typeof loginSchema>;

@@ -1,8 +1,16 @@
+//REQUEST DTOs
 export interface SignupRequest {
   name: string;
   email: string;
   password: string;
 }
+
+export interface LoginRequest {
+  email: string;
+  password: string;
+}
+
+//RESPONSE DTOs
 export interface AuthResponse {
   success: boolean;
   message: string;
@@ -20,3 +28,5 @@ export interface AuthErrorResponse {
 }
 
 export type SignupResponse = AuthResponse | AuthErrorResponse;
+export type LoginResponse = AuthResponse | AuthErrorResponse;
+export type GetMeResponse = AuthResponse | AuthErrorResponse;

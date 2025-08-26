@@ -19,3 +19,19 @@ export const generateToken = (
     throw new Error("Failed to generate token");
   }
 };
+
+export const verifyToken = (token: string): JWTPayload | null => {
+  try {
+    const decoded = jwt.verify(token, JWT_SECRET) as JWTPayload;
+    return decoded;
+  } catch (error) {
+    if (error instanceof jwt.JsonWebTokenError) {
+      console.error("Invalid JWT token:", error.message);
+    } else if (error instanceof jwt.TokenExpiredError) {
+      console.error("JWT token expired:", error.message);
+    } else {
+      console.error("JWT verification error:", error);
+    }
+    return null;
+  }
+};
