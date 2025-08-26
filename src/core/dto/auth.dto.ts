@@ -29,3 +29,4 @@ export interface AuthErrorResponse {
 
 export type SignupResponse = AuthResponse | AuthErrorResponse;
 export type LoginResponse = AuthResponse | AuthErrorResponse;
+export type GetMeResponse = AuthResponse | AuthErrorResponse;
