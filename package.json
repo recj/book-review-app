@@ -11,6 +11,7 @@
     "db:test": "npx tsx src/lib/database/scripts/test-connection.ts"
   },
   "dependencies": {
+    "@heroicons/react": "^2.2.0",
     "@hookform/resolvers": "^5.2.1",
     "@types/jsonwebtoken": "^9.0.10",
     "bcryptjs": "^3.0.2",
