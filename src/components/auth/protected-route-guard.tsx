@@ -12,7 +12,7 @@ interface ProtectedRouteGuardProps {
 
 export default function ProtectedRouteGuard({
     children,
-    redirectTo = '/login',
+    redirectTo = '/',
     showLoading = true
 }: ProtectedRouteGuardProps) {
     const { isAuthenticated, isLoading } = useAuth();
