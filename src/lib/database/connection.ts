@@ -26,7 +26,7 @@ const pool = new Pool({
       : false,
   max: 20,
   idleTimeoutMillis: 30000,
-  connectionTimeoutMillis: 2000,
+  connectionTimeoutMillis: 10000,
 });
 
 export const query = async (text: string, params?: unknown[]) => {
