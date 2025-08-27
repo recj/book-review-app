@@ -5,9 +5,9 @@ const reviewService = new ReviewService();
 
 export async function GET(
   request: NextRequest,
-  context: { params: { id: string } }
+  context: { params: Promise<{ id: string }> }
 ) {
-  const { id } = context.params;
+  const { id } = await context.params;
   const reviewId = parseInt(id);
 
   if (isNaN(reviewId) || reviewId <= 0) {
@@ -33,9 +33,9 @@ export async function GET(
 
 export async function DELETE(
   request: NextRequest,
-  context: { params: { id: string } }
+  context: { params: Promise<{ id: string }> }
 ) {
-  const { id } = context.params;
+  const { id } = await context.params;
   const reviewId = parseInt(id);
 
   if (isNaN(reviewId) || reviewId <= 0) {
