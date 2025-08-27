@@ -23,7 +23,7 @@ export interface CreateReviewData {
   book_title: string;
   rating: number;
   review: string;
-  mood: string;
+  mood: Mood;
 }
 
 export interface CreateReviewInternalData extends CreateReviewData {

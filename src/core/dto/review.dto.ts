@@ -1,11 +1,11 @@
-import { ReviewWithUser } from "@/lib/types/review.types";
+import { Mood, ReviewWithUser } from "@/lib/types/review.types";
 
 //REQUEST DTOs
 export interface CreateReviewRequest {
   book_title: string;
   rating: number;
   review: string;
-  mood: string;
+  mood: Mood;
 }
 
 //RESPONSE DTOs
