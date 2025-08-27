@@ -30,6 +30,12 @@ export interface CreateReviewInternalData extends CreateReviewData {
   user_id: number;
 }
 
-export const AVAILABLE_MOODS = ["mood-a", "mood-b", "mood-c"] as const;
+export const AVAILABLE_MOODS = [
+  "Excited",
+  "Thoughtful",
+  "Inspired",
+  "Disappointed",
+  "Neutral",
+] as const;
 
 export type Mood = (typeof AVAILABLE_MOODS)[number];
