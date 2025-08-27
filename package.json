@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "eslint",
     "db:migrate": "npx tsx src/lib/database/scripts/migrate.ts",
-    "db:test": "npx tsx src/lib/database/scripts/test-connection.ts"
+    "db:test": "npx tsx src/lib/database/scripts/test-connection.ts",
+    "postinstall": "npm run db:migrate"
   },
   "dependencies": {
     "@heroicons/react": "^2.2.0",
